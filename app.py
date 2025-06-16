@@ -11,6 +11,9 @@ from aiogram.types import Message
 
 
 from dotenv import load_dotenv
+
+from utils.notify_admins import bot_start_up, bot_shut_down
+
 load_dotenv()
 
 
@@ -28,6 +31,8 @@ async def command_start_handler(message: Message) -> None:
 
 async def main() -> None:
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    dp.startup.register(bot_start_up)
+    dp.shutdown.register(bot_shut_down)
     await dp.start_polling(bot)
 
 
