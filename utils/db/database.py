@@ -10,12 +10,14 @@ Session = sessionmaker(bind=engine)
 
 
 
+
+
 class User(Base):
     __tablename__ = 'users'
     id = Column(Integer, primary_key=True, autoincrement=True)
     chat_id = Column(BigInteger, unique=True)
     fullname = Column(String(50), nullable=False)
-    phone = Column(String(12))
+    phone = Column(String(13))
     lang = Column(String(2), server_default='uz', nullable=False)
 
     user_answers = relationship('UserAnswer', back_populates='user', cascade='all, delete-orphan')
@@ -112,3 +114,4 @@ class UserAnswer(Base):
 
     def __repr__(self):
         return f"{self.__class__.__name__}({self.id})"
+
