@@ -1,4 +1,3 @@
-
 from aiogram import Router, F, Bot
 from aiogram.types import Message, CallbackQuery, ReplyKeyboardRemove
 from aiogram.utils.i18n import gettext as _

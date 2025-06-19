@@ -5,7 +5,7 @@ from aiogram.utils.i18n import gettext as _
 
 async def set_commands(bot: Bot):
     commands = [
-        BotCommand(command='start', description='Botni ishga tushirish - '
+        BotCommand(command='start', description='Botni ishga tushirish- '
                                                 'Bot has started! - '
                                                 'Бот запущен! '),
         BotCommand(command='help', description='Yordam - '
